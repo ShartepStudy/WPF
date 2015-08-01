@@ -16,7 +16,24 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DockPanel Grid.ColumnSpan="2" LastChildFill="False"/>
+        <DockPanel Grid.ColumnSpan="2">
+			<Menu x:Name="menu" DockPanel.Dock="Top" Margin="0,0,0,2.001">
+				<MenuItem Header="_File">
+					<MenuItem Header="E_xit"/>
+				</MenuItem>
+				<MenuItem Header="_Edit"/>
+				<MenuItem Header="_About"/>
+			</Menu>
+			<ToolBar x:Name="toolBar" DockPanel.Dock="Top">
+				<Button Content="Кнопка"/>
+				<Separator/>				
+			</ToolBar>
+			<Button x:Name="button" Content="Button" Width="75"/>
+			<TextBox x:Name="textBox" TextWrapping="Wrap" Text="TextBox" DockPanel.Dock="Bottom"/>
+			<Grid>
+				<InkCanvas/>
+			</Grid>
+		</DockPanel>
         <UniformGrid Grid.Row="2" FirstColumn="1">
             <GroupBox Header="GroupBox"/>
             <GroupBox Header="GroupBox"/>

@@ -73,12 +73,32 @@
     </Window.Resources>
 
     <Canvas >
-        <Path Data="M49.666667,125 C162.33333,52.333333 101.16646,-67.499511 194.49979,53.167156 287.83313,173.83382 162.23845,103.82818 197.57189,151.82799 232.90533,199.8278 398.50013,154.50015 398.50013,154.50015 398.50013,247.16627 398.50013,247.16627 398.50013,247.16627 51.166337,247.16627 51.166337,247.16627 51.166337,247.16627 50.499669,123.83305 49.666667,125 49.666667,125 z" Fill="#FFF4F4F5" Height="246.457" Canvas.Left="51.667" Stretch="Fill" Stroke="Black" Canvas.Top="27.667" Width="349.833" StrokeThickness="4" Panel.ZIndex="7">
+		<Path Stroke="BlueViolet" StrokeThickness="5" Fill="Green"
+			StrokeDashArray="1 0.5 2 1" StrokeDashCap="Triangle" StrokeLineJoin="Round"
+			Data="M5,5 h100 v50 A15,25 50 0 1 5,25 Z"/>
+		<Path Stroke="BlueViolet" StrokeThickness="5" Fill="Green">
+			<Path.Data>
+				<CombinedGeometry GeometryCombineMode="Exclude"
+								  Geometry2="M200,5 h100 v50 A15,25 50 0 1 200,25 Z">
+					<CombinedGeometry.Geometry1>
+						<RectangleGeometry>
+							<RectangleGeometry.Rect>
+								<Rect X="150" Y="5" Width="200" Height="100"/>
+							</RectangleGeometry.Rect>
+						</RectangleGeometry>
+					</CombinedGeometry.Geometry1>
+					<!-- <CombinedGeometry.Geometry2>
+						<EllipseGeometry Center="400,55" RadiusX="30" RadiusY="50"/>
+					</CombinedGeometry.Geometry2> -->
+				</CombinedGeometry>
+			</Path.Data>
+		</Path>
+        <Path Data="M49.666667,125 C162.33333,52.333333 101.16646,-67.499511 194.49979,53.167156 287.83313,173.83382 162.23845,103.82818 197.57189,151.82799 232.90533,199.8278 398.50013,154.50015 398.50013,154.50015 398.50013,247.16627 398.50013,247.16627 398.50013,247.16627 51.166337,247.16627 51.166337,247.16627 51.166337,247.16627 50.499669,123.83305 49.666667,125 49.666667,125 z" Fill="#FFF4F4F5" Height="246.457" Canvas.Left="51.667" Stretch="Fill" Stroke="Black" Canvas.Top="27.667" Width="349.833" StrokeThickness="4" Panel.ZIndex="7" d:IsHidden="True">
             <Path.Effect>
                 <BlurEffect Radius="10"/>
             </Path.Effect>
         </Path>
-        <Rectangle Height="76.666" Canvas.Left="241" Stroke="Black" Canvas.Top="27.667" Width="286.333" Panel.ZIndex="2">
+        <Rectangle Height="76.666" Canvas.Left="241" Stroke="Black" Canvas.Top="27.667" Width="286.333" Panel.ZIndex="2" d:IsHidden="True">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.855,0.681" StartPoint="0.182,0.394">
                     <LinearGradientBrush.RelativeTransform>
@@ -95,7 +115,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Line X1="10" X2="210" Y1="10" Y2="10" Stroke="Black" />
-        <Button Content="Button" Height="89.334" Canvas.Right="80" Canvas.Bottom="95" Width="204" Style="{DynamicResource EllipticButtonStyle}" Panel.ZIndex="3"/>
+        <Line X1="10" X2="210" Y1="10" Y2="10" Stroke="Black" d:IsHidden="True" />
+        <Button Content="Button" Height="89.334" Canvas.Right="80" Canvas.Bottom="95" Width="204" Style="{DynamicResource EllipticButtonStyle}" Panel.ZIndex="3" d:IsHidden="True"/>
     </Canvas>
 </Window>
