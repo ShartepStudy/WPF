@@ -49,3 +49,4 @@ C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication1\obj
 C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication1\obj\Debug\WpfApplication1.csproj.GenerateResource.Cache
 C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication1\obj\Debug\WpfApplication1.exe
 C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication1\obj\Debug\WpfApplication1.pdb
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication1\obj\Debug\WpfApplication1.csprojResolveAssemblyReference.cache

@@ -1,0 +1,13 @@
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\events\bin\Debug\events.exe.config
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\events\bin\Debug\events.exe
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\events\bin\Debug\events.pdb
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\events\obj\Debug\events.csprojResolveAssemblyReference.cache
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\events\obj\Debug\MainWindow.baml
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\events\obj\Debug\MainWindow.g.cs
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\events\obj\Debug\App.g.cs
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\events\obj\Debug\events_MarkupCompile.cache
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\events\obj\Debug\events.g.resources
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\events\obj\Debug\events.Properties.Resources.resources
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\events\obj\Debug\events.csproj.GenerateResource.Cache
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\events\obj\Debug\events.exe
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\events\obj\Debug\events.pdb

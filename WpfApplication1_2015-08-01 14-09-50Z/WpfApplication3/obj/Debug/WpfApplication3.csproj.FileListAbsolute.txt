@@ -11,3 +11,5 @@ C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication3\obj
 C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication3\obj\Debug\WpfApplication3.csproj.GenerateResource.Cache
 C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication3\obj\Debug\WpfApplication3.exe
 C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication3\obj\Debug\WpfApplication3.pdb
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication3\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication3\obj\Debug\WpfApplication3_MarkupCompile.lref

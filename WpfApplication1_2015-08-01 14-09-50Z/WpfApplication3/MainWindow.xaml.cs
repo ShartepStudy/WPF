@@ -24,7 +24,7 @@ namespace WpfApplication3
         LShapeGeometry geometry = new LShapeGeometry();
         public MainWindow()
         {
-            DefaultStyleKey = typeof(MainWindow);
+            //DefaultStyleKey = typeof(MainWindow);
 
             InitializeComponent();
 
