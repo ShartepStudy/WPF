@@ -1,0 +1,45 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:WpfApplication3"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WpfApplication3.BindingWindow"
+        Title="BindingWindow" Height="300" Width="300">
+    <Window.Resources>
+        <local:NameToColorConverter x:Key="NameToColorConverter"/>
+        <DataTemplate x:Key="ColorDataTemplate1">
+            <Grid d:DesignWidth="337" d:DataContext="{x:Static local:BackgroundColors.OrangeRed}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Margin="10,0" Width="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}}">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="{Binding Converter={StaticResource NameToColorConverter}, Mode=OneWay}"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <TextBlock Grid.Column="1" TextWrapping="Wrap" Text="{Binding Mode=OneWay}"/>
+            </Grid>
+        </DataTemplate>
+        <ItemsPanelTemplate x:Key="GridItemsPanelTemplate">
+        	<UniformGrid IsItemsHost="True" Columns="2"/>
+        </ItemsPanelTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ComboBox ItemTemplate="{DynamicResource ColorDataTemplate1}">
+            <local:BackgroundColors>OrangeRed</local:BackgroundColors>
+            <local:BackgroundColors>YellowGreen</local:BackgroundColors>
+            <local:BackgroundColors>BlueViolet</local:BackgroundColors>
+        </ComboBox>
+        <ListBox Grid.Row="1" ItemTemplate="{DynamicResource ColorDataTemplate1}" ItemsPanel="{DynamicResource GridItemsPanelTemplate}">
+            <local:BackgroundColors>OrangeRed</local:BackgroundColors>
+            <local:BackgroundColors>YellowGreen</local:BackgroundColors>
+            <local:BackgroundColors>BlueViolet</local:BackgroundColors>
+            <local:BackgroundColors>Azure</local:BackgroundColors>
+            <local:BackgroundColors>Gold</local:BackgroundColors>
+        </ListBox>
+    </Grid>
+</Window>

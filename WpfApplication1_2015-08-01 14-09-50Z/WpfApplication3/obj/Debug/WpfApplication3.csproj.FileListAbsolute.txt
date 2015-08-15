@@ -13,3 +13,7 @@ C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication3\obj
 C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication3\obj\Debug\WpfApplication3.pdb
 C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication3\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication3\obj\Debug\WpfApplication3_MarkupCompile.lref
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication3\obj\Debug\TextWindow.baml
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication3\obj\Debug\TextWindow.g.cs
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication3\obj\Debug\BindingWindow.g.cs
+C:\Users\petrash\Source\WpfApplication1_2015-08-01 14-09-50Z\WpfApplication3\obj\Debug\BindingWindow.baml
