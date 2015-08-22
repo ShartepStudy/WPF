@@ -1,32 +1,35 @@
-﻿<Window
+﻿<Window x:Class="WpfApplication4.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:WpfApplication4" x:Class="WpfApplication4.MainWindow"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication4"
+        mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
     <Window.Resources>
         <ObjectDataProvider x:Key="objectProvider" MethodName="GetXmlDocument"/>
         <XmlDataProvider x:Key="xmlProvider"/>
-		<HierarchicalDataTemplate x:Key="XmlDataTemplate" ItemsSource="{Binding XPath=item}">
-			<TextBlock Text="{Binding}"/>
-		</HierarchicalDataTemplate>
+        <HierarchicalDataTemplate  x:Key="XmlDataTemplate" ItemsSource="{Binding XPath=item}">
+            <TextBlock Text="{Binding}"/>
+        </HierarchicalDataTemplate>
     </Window.Resources>
     <Window.DataContext>
-		<local:MainViewModel/>
-	</Window.DataContext>
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="8*"/>
-			<RowDefinition Height="9*"/>
-		</Grid.RowDefinitions>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition/>
-			<ColumnDefinition/>
-		</Grid.ColumnDefinitions>
-		<ListBox Grid.Row="1" ItemsSource="{Binding Numbers}" Margin="5" Grid.RowSpan="2"/>
-		<Button Content="Command" Command="{Binding Command, Mode=OneWay}" Margin="5"/>
-		<TextBlock Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Mode=OneWay, Source={StaticResource objectProvider}}"/>
-		<TreeView Grid.Column="1" Grid.RowSpan="2" ItemsSource="{Binding Source={StaticResource xmlProvider}, XPath=root}"/>
-        
-	</Grid>
+        <local:MainViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="84*"/>
+            <ColumnDefinition Width="89*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="82*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Command" Command="{Binding Command, Mode=OneWay}" Margin="5"/>
+        <ListBox Grid.Row="1" ItemsSource="{Binding Numbers}" Margin="5" Grid.RowSpan="2"/>
+        <TextBlock Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Mode=OneWay}" DataContext="{Binding Source={StaticResource objectProvider}}"/>
+        <TreeView Grid.Column="1" Grid.RowSpan="2" ItemsSource="{Binding Source={StaticResource xmlProvider}, XPath=root}" ItemTemplate="{DynamicResource XmlDataTemplate}"/>
+
+    </Grid>
 </Window>

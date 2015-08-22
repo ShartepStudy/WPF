@@ -1,37 +1,37 @@
-﻿<Window x:Class="WpfApplication3.TextWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:WpfApplication3"
-        Title="TextWindow" Height="300" Width="300">
+﻿<Window
+    x:Class="WpfApplication3.TextWindow"
+    Title="TextWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WpfApplication3"
+    Height="300"
+    Width="300"
+    mc:Ignorable="d">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" MinHeight="88"/>
-            <RowDefinition Height="Auto" MinHeight="22"/>
-            <RowDefinition Height="Auto" MinHeight="41"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock TextWrapping="Wrap" TextAlignment="Center" FontSize="24">
-            <Run Text="Это есть TextBlock"/>
-            <LineBreak/>
-            <Run FontWeight="Heavy" Text="Нач"/><Run Text="ало"/>
-            <Hyperlink NavigateUri="http://www.samlab.com">
-                <Run Text="Samlab"/>
-            </Hyperlink>
-            <LineBreak/>
-            <Run Text="{Binding Text, ElementName=textBox}"/>
-        </TextBlock>
-        <Grid Grid.Row="1">
+        <TextBlock
+			FontSize="21.333"
+			TextAlignment="Center"
+			TextWrapping="Wrap" Margin="0,0,-0.667,25.333" Grid.RowSpan="2"><Run Text="Это есть TextBlock" /><LineBreak/><Run FontWeight="Heavy" Text="Нач"/><Run Text="ало"/><Run Text=" "/><Hyperlink NavigateUri="http://www.samlab.ws"><Run Text="SamLab"/></Hyperlink><LineBreak/><Run Text="{Binding Text, ElementName=textBox}"/></TextBlock>
+        <Grid Margin="0,85,0.333,0.333" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="_Name" Target="{Binding ElementName=textBox, Mode=OneTime}" Margin="0,-4,0,0"/>
-            <TextBox x:Name="textBox" Grid.Column="1" TextWrapping="Wrap" Text="TextBox"/>
+            <Label x:Name="label" Content="_Name" Target="{Binding ElementName=textBox, Mode=OneTime}" Margin="0,-4,0,0"/>
+            <TextBox x:Name="textBox" Grid.Column="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
         </Grid>
-        <TextBox Grid.Row="2" TextWrapping="Wrap" Grid.RowSpan="2">
+        <TextBox Grid.Row="2" TextWrapping="Wrap">
             <MultiBinding Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                 <MultiBinding.Converter>
-                    <local:ActualSizeConverter/>
+                    <local:ActualSizeConverter />
                 </MultiBinding.Converter>
                 <Binding Path="Width" Mode="TwoWay">
                     <Binding.RelativeSource>
@@ -49,25 +49,34 @@
             <FlowDocument>
                 <Section>
                     <Paragraph>
-                        Друг мой эльф! Яшке б свёз птиц южных чащ!
-                        В чащах юга жил бы цитрус? Да, но фальшивый экземпляр!
-                        Любя, съешь щипцы, — вздохнёт мэр, — кайф жгуч.
-                        Шеф взъярён тчк щипцы с эхом гудбай Жюль.
-                        Эй, жлоб! Где туз? Прячь юных съёмщиц в шкаф.
-                        Экс-граф? Плюш изъят. Бьём чуждый цен хвощ!
-                        Эх, чужак! Общий съём цен шляп (юфть) — вдрызг!
-                        Эх, чужд кайф, сплющь объём вши, грызя цент.
-                        Чушь: гид вёз кэб цапф, юный жмот съел хрящ.
+Чуєш їх, доцю, га? Кумедна ж ти, прощайся без ґольфів!
+Єхидна, ґава, їжак ще й шиплячі плазуни бігцем форсують Янцзи.
+Жебракують філософи при ґанку церкви в Гадячі, ще й шатро їхнє п’яне знаємо.
+Гей, хлопці, не вспію - на ґанку ваша файна їжа знищується бурундучком.
+Хвацький юшковар Філіп щодня на ґанку готує сім’ї вечерю з жаб.
+На подушечці форми любої є й ґудзик щоб пір’я геть жовте сховати.
+У ґазди є ж бо гевеї, які шиють прості килими, наче хащі фацелій.
+З’їв аґрусу — та ягода цілюща б’є жах інфекцій шипучим «ь».
+Файкою пихкаючи, щаслива ґаво — мандруєш, зібгані цвяхи стеж!
+Щурячий бугай із їжаком-харцизом в’ючись підписали ґешефт у єнах.
+Фабрикуймо гідність, лящім їжею, ґав хапаймо, з’єднавці чаш!
+Факт ґринджол: бій псюг вщух, з’їм шче яєць.
+Глянь (!): що ж є шрифт, цей «спазм» — ґід букв? Юч їх.
+Їхав єдиний москаль. Чув, що віз царю жезл, п’ять шуб і гофр.
+Юнкерський джинґл, що при безхліб’ї чує фашист, це ловця гімн.
+Грішний джиґіт, що хотів у Францію, позбувався цієї думки з’їдаючи трюфель.
+Безпігментний шлейф інжектора здається очищався від корозії в Цюриху.
+В Бахчисараї фельд’єґер зумів одягнути ящірці жовтий капюшон!
+Протягом цієї п'ятирічки в ґрунт було висаджено гарбуз, шпинат та цілющий фенхель.
+Бойовик, з'їдаючи в кущах смажену яєшню, вгледів профіль ґрунтознавця.
+Здійнявши ґвалт поміж тієї юрби процентщиків, аферист чухнув геть.
+Жбурляючи в гостей фрапе, ґазда впав ниць і шуганув під ємкість, щоб поїхати.
+З'їж кешью, грейпфрут! Що без ґанджу сонцем біля Ємчихи вирощені.
+Хизується оце їжак Гійом, кущ аґрусу під чашу-світлофор - в юрбу несе.
+Я ж Фаб'єну, почіпивши на горищі ґейзер, кластером цвях дії - люсь!
                     </Paragraph>
                     <Paragraph>
-                        Lorem Ipsum - це текст-"риба", що використовується в друкарстві та дизайні. 
-                        Lorem Ipsum є, фактично, стандартною "рибою" аж з XVI сторіччя, коли невідомий друкар 
-                        взяв шрифтову гранку та склав на ній підбірку зразків шрифтів. 
-                        "Риба" не тільки успішно пережила п'ять століть, але й прижилася в 
-                        електронному верстуванні, залишаючись по суті незмінною. Вона популяризувалась в 60-их 
-                        роках минулого сторіччя завдяки виданню зразків шрифтів Letraset, які містили уривки з 
-                        Lorem Ipsum, і вдруге - нещодавно завдяки програмам комп'ютерного верстування на кшталт 
-                        Aldus Pagemaker, які використовували різні версії Lorem Ipsum.
+Per nisi pulvinar turpis metus nibh Nulla aptent fermentum nascetur est condimentum vel mauris. Aliquet imperdiet ut penatibus a aliquet mauris Quisque magna dapibus odio senectus habitant. Vehicula aptent morbi ridiculus eget blandit dis parturient condimentum pharetra elementum libero sociis facilisis. Convallis Nunc felis mus lobortis malesuada quis mus Morbi dictum est tincidunt Duis leo. Elit In Morbi feugiat purus amet Quisque hendrerit ligula bibendum pellentesque Etiam. Ex vel fermentum pulvinar nisi volutpat aliquam mauris senectus bibendum aptent Cum.
                     </Paragraph>
                 </Section>
                 <Section>
@@ -80,20 +89,12 @@
                         </Table.Resources>
                         <TableRowGroup>
                             <TableRow>
-                                <TableCell RowSpan="2">
-                                    <Paragraph>Tall Header</Paragraph>
-                                </TableCell>
-                                <TableCell ColumnSpan="2">
-                                    <Paragraph>Large Header</Paragraph>
-                                </TableCell>
+                                <TableCell RowSpan="2"><Paragraph>Tall Header</Paragraph></TableCell>
+                                <TableCell ColumnSpan="2"><Paragraph>Large Header</Paragraph></TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell>
-                                    <Paragraph>Sabheader 1</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>Sabheader 2</Paragraph>
-                                </TableCell>
+                                <TableCell><Paragraph>Subheader1</Paragraph></TableCell>
+                                <TableCell><Paragraph>Subheader2</Paragraph></TableCell>
                             </TableRow>
                         </TableRowGroup>
                         <TableRowGroup>
@@ -103,36 +104,18 @@
                                 <TableCell><Paragraph>Cell 1.2</Paragraph></TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell>
-                                    <BlockUIContainer>
-                                        <Button>Row 2</Button>
-                                    </BlockUIContainer>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>Cell 2.1</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>Cell 2.2</Paragraph>
-                                </TableCell>
+                                <TableCell><BlockUIContainer><Button>Row 2</Button></BlockUIContainer></TableCell>
+                                <TableCell><Paragraph>Cell 2.1</Paragraph></TableCell>
+                                <TableCell><Paragraph>Cell 2.2</Paragraph></TableCell>
                             </TableRow>
                         </TableRowGroup>
                     </Table>
                     <List MarkerStyle="UpperRoman">
-                        <ListItem>
-                            <Paragraph>Item 1</Paragraph>
-                        </ListItem>
-                        <ListItem>
-                            <Paragraph>Item 2</Paragraph>
-                        </ListItem>
-                        <ListItem>
-                            <Paragraph>Item 3</Paragraph>
-                        </ListItem>
-                        <ListItem>
-                            <Paragraph>Item 4</Paragraph>
-                        </ListItem>
-                        <ListItem>
-                            <Paragraph>Item 5</Paragraph>
-                        </ListItem>
+                        <ListItem><Paragraph>Item 1</Paragraph></ListItem>
+                        <ListItem><Paragraph>Item 2</Paragraph></ListItem>
+                        <ListItem><Paragraph>Item 3</Paragraph></ListItem>
+                        <ListItem><Paragraph>Item 4</Paragraph></ListItem>
+                        <ListItem><Paragraph>Item 5</Paragraph></ListItem>
                     </List>
                 </Section>
             </FlowDocument>

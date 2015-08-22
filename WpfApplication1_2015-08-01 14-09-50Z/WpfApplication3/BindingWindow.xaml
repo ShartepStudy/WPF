@@ -1,40 +1,62 @@
 ﻿<Window
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:WpfApplication3"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WpfApplication3.BindingWindow"
-        Title="BindingWindow" Height="300" Width="300">
+    x:Class="WpfApplication3.BindingWindow"
+    Title="BindingWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WpfApplication3"
+    Height="300"
+    Width="300"
+    mc:Ignorable="d">
     <Window.Resources>
-        <local:NameToColorConverter x:Key="NameToColorConverter"/>
-        <DataTemplate x:Key="ColorDataTemplate1">
-            <Grid d:DesignWidth="337" d:DataContext="{x:Static local:BackgroundColors.OrangeRed}">
+        <local:NameToColorConverter x:Key="NameToColorConverter" />
+        <DataTemplate x:Key="ColorDataTemplate">
+            <Grid d:DesignWidth="207.156">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Rectangle Margin="10,0" Width="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}}">
+                <Rectangle
+                    Width="{Binding
+                        ActualHeight,
+                        Mode=OneWay,
+                        RelativeSource={RelativeSource Self}}"
+                    Margin="10,0">
                     <Rectangle.Fill>
-                        <SolidColorBrush Color="{Binding Converter={StaticResource NameToColorConverter}, Mode=OneWay}"/>
+                        <SolidColorBrush
+                            Color="{Binding
+                                Converter={StaticResource NameToColorConverter},
+                                Mode=OneWay}" />
                     </Rectangle.Fill>
                 </Rectangle>
-                <TextBlock Grid.Column="1" TextWrapping="Wrap" Text="{Binding Mode=OneWay}"/>
+                <TextBlock
+                    Grid.Column="1"
+                    Text="{Binding Mode=OneWay}"
+                    TextWrapping="Wrap" />
             </Grid>
         </DataTemplate>
         <ItemsPanelTemplate x:Key="GridItemsPanelTemplate">
-        	<UniformGrid IsItemsHost="True" Columns="2"/>
+            <UniformGrid IsItemsHost="True" Columns="2"/>
         </ItemsPanelTemplate>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
         </Grid.RowDefinitions>
-        <ComboBox ItemTemplate="{DynamicResource ColorDataTemplate1}">
+        <ComboBox
+            x:Name="comboBox"
+            ItemTemplate="{DynamicResource ColorDataTemplate}"
+            SelectedValuePath="Content">
             <local:BackgroundColors>OrangeRed</local:BackgroundColors>
             <local:BackgroundColors>YellowGreen</local:BackgroundColors>
             <local:BackgroundColors>BlueViolet</local:BackgroundColors>
         </ComboBox>
-        <ListBox Grid.Row="1" ItemTemplate="{DynamicResource ColorDataTemplate1}" ItemsPanel="{DynamicResource GridItemsPanelTemplate}">
+        <ListBox
+            Grid.Row="1"
+            ItemTemplate="{DynamicResource ColorDataTemplate}"
+            SelectedValuePath="Content" ItemsPanel="{DynamicResource GridItemsPanelTemplate}">
             <local:BackgroundColors>OrangeRed</local:BackgroundColors>
             <local:BackgroundColors>YellowGreen</local:BackgroundColors>
             <local:BackgroundColors>BlueViolet</local:BackgroundColors>
