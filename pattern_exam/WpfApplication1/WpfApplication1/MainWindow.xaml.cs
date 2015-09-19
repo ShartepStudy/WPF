@@ -21,6 +21,7 @@ namespace WpfApplication1
     public partial class MainWindow : Window
     {
         private Stack<ICommand> execCommands = new Stack<ICommand>();
+        private IFigure copyF = null;
         public MainWindow()
         {
             InitializeComponent();
@@ -55,6 +56,44 @@ namespace WpfApplication1
             if ( execCommands.Count() > 0 )
             {
                 execCommands.Pop().Undo();
+            }
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            IFigure f = this.GetCheckedFigure();
+            if (f != null)
+            {
+                ICommand c = new HideCommand(f);
+                c.Do();
+                execCommands.Push(c);
+            }
+        }
+
+        private IFigure GetCheckedFigure()
+        {
+            foreach (RadioButton rb in this.screenListBox.Items)
+            {
+                if (rb.IsChecked == true)
+                {
+                    return rb as IFigure;
+                }
+            }
+            return null;
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            copyF = GetCheckedFigure();
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            if (copyF != null)
+            {
+                ICommand c = new DrawCommand(copyF.getCopy());
+                c.Do();
+                execCommands.Push(c);
             }
         }
     }
@@ -111,11 +150,12 @@ namespace WpfApplication1
     {
         void draw();
         void hide();
+        IFigure getCopy();
     }
 
-    abstract class Figure : IFigure
+    abstract class Figure : RadioButton, IFigure
     {
-        MainWindow w = null;
+        public MainWindow w = null;
         protected virtual int id {set; get;}
         public Figure(MainWindow window, int i)
         {
@@ -125,14 +165,18 @@ namespace WpfApplication1
         public void draw()
         {
             w.logTextBox.Text += "добавили " + Name() + " №" + id.ToString() + '\n';
+            this.Content = Name() + " №" + id.ToString();
+            w.screenListBox.Items.Add(this); 
         }
 
         public void hide()
         {
             w.logTextBox.Text += "удалили " + Name() + " №" + id.ToString() + '\n';
+            w.screenListBox.Items.Remove(this);
         }
 
         protected abstract string Name();
+        public abstract IFigure getCopy();
     }
 
     class Rect : Figure
@@ -144,6 +188,11 @@ namespace WpfApplication1
         {
             return "квадрат";
         }
+
+        public override IFigure getCopy()
+        {
+            return new Rect(w);
+        }
     }
     class Round : Figure
     {
@@ -154,6 +203,10 @@ namespace WpfApplication1
         {
             return "круг";
         }
+        public override IFigure getCopy()
+        {
+            return new Round(w);
+        }
     }
     class Triangle : Figure
     {
@@ -163,6 +216,10 @@ namespace WpfApplication1
         protected override string Name()
         {
             return "треугольник";
+        }
+        public override IFigure getCopy()
+        {
+            return new Triangle(w);
         }
     }
     

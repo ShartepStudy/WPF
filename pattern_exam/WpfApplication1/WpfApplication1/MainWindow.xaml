@@ -14,9 +14,9 @@
         <Button Content="Квадрат" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Width="65" Height="20" Click="Button_Click"/>
         <Button Content="Круг" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Width="64" Height="20" Click="Button_Click_1"/>
         <Button Content="Треугольник" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Width="64" Height="20" Click="Button_Click_2"/>
-        <Button Content="Удалить" Grid.Column="1" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Width="77" Height="20"/>
-        <Button Content="Копировать" Grid.Column="1" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Width="77" Height="20"/>
-        <Button Content="Вставить" Grid.Column="1" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Width="77" Height="20"/>
+        <Button Content="Удалить" Grid.Column="1" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Width="77" Height="20" Click="Button_Click_4"/>
+        <Button Content="Копировать" Grid.Column="1" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Width="77" Height="20" Click="Button_Click_5"/>
+        <Button Content="Вставить" Grid.Column="1" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Width="77" Height="20" Click="Button_Click_6"/>
         <Button Content="Назад" Grid.Column="1" HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top" Width="77" Click="Button_Click_3"/>
         <Label Content="Экран" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label Content="Логирование действий" Grid.Column="3" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
