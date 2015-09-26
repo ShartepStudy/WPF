@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+
+  <siteMapNode title="Home" url="/Menu2.aspx">
+    <siteMapNode title="Search">
+      <siteMapNode title="Google" url="https://www.google.com.ua/" />
+      <siteMapNode title="Yandex" url="https://www.yandex.ua" />
+    </siteMapNode>
+    <siteMapNode title="Mail">
+      <siteMapNode title="Gmail" url="https://mail.google.com" />
+      <siteMapNode title="Yandex Mail" url="https://mail.yandex.ua" />
+    </siteMapNode>
+  </siteMapNode>
+  
+</siteMap>
