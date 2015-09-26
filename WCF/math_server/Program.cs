@@ -12,6 +12,9 @@ namespace math_server
         static void Main(string[] args)
         {
             ServiceHost sh = new ServiceHost(typeof(MyMath));
+
+            // sh.AddServiceEndpoint(typeof(IMyMath), new WSHttpBinding(), "http://localhost:8082/MyMath/Ep1");
+
             sh.Open();
             Console.WriteLine("For exit press <ENTER>\n");
             Console.ReadLine();
