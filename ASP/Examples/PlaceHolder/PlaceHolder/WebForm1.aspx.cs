@@ -20,7 +20,7 @@ namespace PlaceHolder
                 PlaceHolder1.Controls.Add(new LiteralControl("<br />"));
                 TextBox tbSName = new TextBox();
                 tbSName.ID = "tb_SName";
-                PlaceHolder1.Controls.Add(tbSName);
+                //PlaceHolder1.Controls.Add(tbSName);
                 PlaceHolder1.Controls.Add(new LiteralControl("<br /><br />"));
 
                 //tbSName.TextChanged += new System.EventHandler(this.tb_SName_TextChanged);
