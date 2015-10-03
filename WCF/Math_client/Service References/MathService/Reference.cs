@@ -9,17 +9,146 @@
 //------------------------------------------------------------------------------
 
 namespace Math_client.MathService {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MathResult", Namespace="http://schemas.datacontract.org/2004/07/math_server")]
+    [System.SerializableAttribute()]
+    public partial class MathResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double DivField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double MultField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double SubField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double SumField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Div {
+            get {
+                return this.DivField;
+            }
+            set {
+                if ((this.DivField.Equals(value) != true)) {
+                    this.DivField = value;
+                    this.RaisePropertyChanged("Div");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Mult {
+            get {
+                return this.MultField;
+            }
+            set {
+                if ((this.MultField.Equals(value) != true)) {
+                    this.MultField = value;
+                    this.RaisePropertyChanged("Mult");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Sub {
+            get {
+                return this.SubField;
+            }
+            set {
+                if ((this.SubField.Equals(value) != true)) {
+                    this.SubField = value;
+                    this.RaisePropertyChanged("Sub");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Sum {
+            get {
+                return this.SumField;
+            }
+            set {
+                if ((this.SumField.Equals(value) != true)) {
+                    this.SumField = value;
+                    this.RaisePropertyChanged("Sum");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MathService.IMyMath")]
     public interface IMyMath {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyMath/Add", ReplyAction="http://tempuri.org/IMyMath/AddResponse")]
-        int Add(int x, int y);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyMath/AddInt", ReplyAction="http://tempuri.org/IMyMath/AddIntResponse")]
+        int AddInt(int x, int y);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyMath/Add", ReplyAction="http://tempuri.org/IMyMath/AddResponse")]
-        System.Threading.Tasks.Task<int> AddAsync(int x, int y);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IMyMath/AddInt", ReplyAction="http://tempuri.org/IMyMath/AddIntResponse")]
+        System.IAsyncResult BeginAddInt(int x, int y, System.AsyncCallback callback, object asyncState);
+        
+        int EndAddInt(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyMath/AddDouble", ReplyAction="http://tempuri.org/IMyMath/AddDoubleResponse")]
+        double AddDouble(double x, double y);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IMyMath/AddDouble", ReplyAction="http://tempuri.org/IMyMath/AddDoubleResponse")]
+        System.IAsyncResult BeginAddDouble(double x, double y, System.AsyncCallback callback, object asyncState);
+        
+        double EndAddDouble(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyMath/Total", ReplyAction="http://tempuri.org/IMyMath/TotalResponse")]
+        Math_client.MathService.MathResult Total(int a, int b);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IMyMath/Total", ReplyAction="http://tempuri.org/IMyMath/TotalResponse")]
+        System.IAsyncResult BeginTotal(int a, int b, System.AsyncCallback callback, object asyncState);
+        
+        Math_client.MathService.MathResult EndTotal(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyMath/TwoWayOperation", ReplyAction="http://tempuri.org/IMyMath/TwoWayOperationResponse")]
+        void TwoWayOperation(string str);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IMyMath/TwoWayOperation", ReplyAction="http://tempuri.org/IMyMath/TwoWayOperationResponse")]
+        System.IAsyncResult BeginTwoWayOperation(string str, System.AsyncCallback callback, object asyncState);
+        
+        void EndTwoWayOperation(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IMyMath/OneWayOperation")]
+        void OneWayOperation(string str);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://tempuri.org/IMyMath/OneWayOperation")]
+        System.IAsyncResult BeginOneWayOperation(string str, System.AsyncCallback callback, object asyncState);
+        
+        void EndOneWayOperation(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -28,7 +157,94 @@ namespace Math_client.MathService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddIntCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddIntCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddDoubleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddDoubleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public double Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((double)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class TotalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public TotalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Math_client.MathService.MathResult Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Math_client.MathService.MathResult)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class MyMathClient : System.ServiceModel.ClientBase<Math_client.MathService.IMyMath>, Math_client.MathService.IMyMath {
+        
+        private BeginOperationDelegate onBeginAddIntDelegate;
+        
+        private EndOperationDelegate onEndAddIntDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddIntCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddDoubleDelegate;
+        
+        private EndOperationDelegate onEndAddDoubleDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddDoubleCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginTotalDelegate;
+        
+        private EndOperationDelegate onEndTotalDelegate;
+        
+        private System.Threading.SendOrPostCallback onTotalCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginTwoWayOperationDelegate;
+        
+        private EndOperationDelegate onEndTwoWayOperationDelegate;
+        
+        private System.Threading.SendOrPostCallback onTwoWayOperationCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginOneWayOperationDelegate;
+        
+        private EndOperationDelegate onEndOneWayOperationDelegate;
+        
+        private System.Threading.SendOrPostCallback onOneWayOperationCompletedDelegate;
         
         public MyMathClient() {
         }
@@ -49,12 +265,268 @@ namespace Math_client.MathService {
                 base(binding, remoteAddress) {
         }
         
-        public int Add(int x, int y) {
-            return base.Channel.Add(x, y);
+        public event System.EventHandler<AddIntCompletedEventArgs> AddIntCompleted;
+        
+        public event System.EventHandler<AddDoubleCompletedEventArgs> AddDoubleCompleted;
+        
+        public event System.EventHandler<TotalCompletedEventArgs> TotalCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> TwoWayOperationCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OneWayOperationCompleted;
+        
+        public int AddInt(int x, int y) {
+            return base.Channel.AddInt(x, y);
         }
         
-        public System.Threading.Tasks.Task<int> AddAsync(int x, int y) {
-            return base.Channel.AddAsync(x, y);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddInt(int x, int y, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddInt(x, y, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndAddInt(System.IAsyncResult result) {
+            return base.Channel.EndAddInt(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddInt(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int x = ((int)(inValues[0]));
+            int y = ((int)(inValues[1]));
+            return this.BeginAddInt(x, y, callback, asyncState);
+        }
+        
+        private object[] OnEndAddInt(System.IAsyncResult result) {
+            int retVal = this.EndAddInt(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddIntCompleted(object state) {
+            if ((this.AddIntCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddIntCompleted(this, new AddIntCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddIntAsync(int x, int y) {
+            this.AddIntAsync(x, y, null);
+        }
+        
+        public void AddIntAsync(int x, int y, object userState) {
+            if ((this.onBeginAddIntDelegate == null)) {
+                this.onBeginAddIntDelegate = new BeginOperationDelegate(this.OnBeginAddInt);
+            }
+            if ((this.onEndAddIntDelegate == null)) {
+                this.onEndAddIntDelegate = new EndOperationDelegate(this.OnEndAddInt);
+            }
+            if ((this.onAddIntCompletedDelegate == null)) {
+                this.onAddIntCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddIntCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddIntDelegate, new object[] {
+                        x,
+                        y}, this.onEndAddIntDelegate, this.onAddIntCompletedDelegate, userState);
+        }
+        
+        public double AddDouble(double x, double y) {
+            return base.Channel.AddDouble(x, y);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddDouble(double x, double y, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddDouble(x, y, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public double EndAddDouble(System.IAsyncResult result) {
+            return base.Channel.EndAddDouble(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddDouble(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            double x = ((double)(inValues[0]));
+            double y = ((double)(inValues[1]));
+            return this.BeginAddDouble(x, y, callback, asyncState);
+        }
+        
+        private object[] OnEndAddDouble(System.IAsyncResult result) {
+            double retVal = this.EndAddDouble(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddDoubleCompleted(object state) {
+            if ((this.AddDoubleCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddDoubleCompleted(this, new AddDoubleCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddDoubleAsync(double x, double y) {
+            this.AddDoubleAsync(x, y, null);
+        }
+        
+        public void AddDoubleAsync(double x, double y, object userState) {
+            if ((this.onBeginAddDoubleDelegate == null)) {
+                this.onBeginAddDoubleDelegate = new BeginOperationDelegate(this.OnBeginAddDouble);
+            }
+            if ((this.onEndAddDoubleDelegate == null)) {
+                this.onEndAddDoubleDelegate = new EndOperationDelegate(this.OnEndAddDouble);
+            }
+            if ((this.onAddDoubleCompletedDelegate == null)) {
+                this.onAddDoubleCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddDoubleCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddDoubleDelegate, new object[] {
+                        x,
+                        y}, this.onEndAddDoubleDelegate, this.onAddDoubleCompletedDelegate, userState);
+        }
+        
+        public Math_client.MathService.MathResult Total(int a, int b) {
+            return base.Channel.Total(a, b);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginTotal(int a, int b, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginTotal(a, b, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Math_client.MathService.MathResult EndTotal(System.IAsyncResult result) {
+            return base.Channel.EndTotal(result);
+        }
+        
+        private System.IAsyncResult OnBeginTotal(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int a = ((int)(inValues[0]));
+            int b = ((int)(inValues[1]));
+            return this.BeginTotal(a, b, callback, asyncState);
+        }
+        
+        private object[] OnEndTotal(System.IAsyncResult result) {
+            Math_client.MathService.MathResult retVal = this.EndTotal(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnTotalCompleted(object state) {
+            if ((this.TotalCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.TotalCompleted(this, new TotalCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void TotalAsync(int a, int b) {
+            this.TotalAsync(a, b, null);
+        }
+        
+        public void TotalAsync(int a, int b, object userState) {
+            if ((this.onBeginTotalDelegate == null)) {
+                this.onBeginTotalDelegate = new BeginOperationDelegate(this.OnBeginTotal);
+            }
+            if ((this.onEndTotalDelegate == null)) {
+                this.onEndTotalDelegate = new EndOperationDelegate(this.OnEndTotal);
+            }
+            if ((this.onTotalCompletedDelegate == null)) {
+                this.onTotalCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnTotalCompleted);
+            }
+            base.InvokeAsync(this.onBeginTotalDelegate, new object[] {
+                        a,
+                        b}, this.onEndTotalDelegate, this.onTotalCompletedDelegate, userState);
+        }
+        
+        public void TwoWayOperation(string str) {
+            base.Channel.TwoWayOperation(str);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginTwoWayOperation(string str, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginTwoWayOperation(str, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndTwoWayOperation(System.IAsyncResult result) {
+            base.Channel.EndTwoWayOperation(result);
+        }
+        
+        private System.IAsyncResult OnBeginTwoWayOperation(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string str = ((string)(inValues[0]));
+            return this.BeginTwoWayOperation(str, callback, asyncState);
+        }
+        
+        private object[] OnEndTwoWayOperation(System.IAsyncResult result) {
+            this.EndTwoWayOperation(result);
+            return null;
+        }
+        
+        private void OnTwoWayOperationCompleted(object state) {
+            if ((this.TwoWayOperationCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.TwoWayOperationCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void TwoWayOperationAsync(string str) {
+            this.TwoWayOperationAsync(str, null);
+        }
+        
+        public void TwoWayOperationAsync(string str, object userState) {
+            if ((this.onBeginTwoWayOperationDelegate == null)) {
+                this.onBeginTwoWayOperationDelegate = new BeginOperationDelegate(this.OnBeginTwoWayOperation);
+            }
+            if ((this.onEndTwoWayOperationDelegate == null)) {
+                this.onEndTwoWayOperationDelegate = new EndOperationDelegate(this.OnEndTwoWayOperation);
+            }
+            if ((this.onTwoWayOperationCompletedDelegate == null)) {
+                this.onTwoWayOperationCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnTwoWayOperationCompleted);
+            }
+            base.InvokeAsync(this.onBeginTwoWayOperationDelegate, new object[] {
+                        str}, this.onEndTwoWayOperationDelegate, this.onTwoWayOperationCompletedDelegate, userState);
+        }
+        
+        public void OneWayOperation(string str) {
+            base.Channel.OneWayOperation(str);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginOneWayOperation(string str, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginOneWayOperation(str, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndOneWayOperation(System.IAsyncResult result) {
+            base.Channel.EndOneWayOperation(result);
+        }
+        
+        private System.IAsyncResult OnBeginOneWayOperation(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string str = ((string)(inValues[0]));
+            return this.BeginOneWayOperation(str, callback, asyncState);
+        }
+        
+        private object[] OnEndOneWayOperation(System.IAsyncResult result) {
+            this.EndOneWayOperation(result);
+            return null;
+        }
+        
+        private void OnOneWayOperationCompleted(object state) {
+            if ((this.OneWayOperationCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.OneWayOperationCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void OneWayOperationAsync(string str) {
+            this.OneWayOperationAsync(str, null);
+        }
+        
+        public void OneWayOperationAsync(string str, object userState) {
+            if ((this.onBeginOneWayOperationDelegate == null)) {
+                this.onBeginOneWayOperationDelegate = new BeginOperationDelegate(this.OnBeginOneWayOperation);
+            }
+            if ((this.onEndOneWayOperationDelegate == null)) {
+                this.onEndOneWayOperationDelegate = new EndOperationDelegate(this.OnEndOneWayOperation);
+            }
+            if ((this.onOneWayOperationCompletedDelegate == null)) {
+                this.onOneWayOperationCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnOneWayOperationCompleted);
+            }
+            base.InvokeAsync(this.onBeginOneWayOperationDelegate, new object[] {
+                        str}, this.onEndOneWayOperationDelegate, this.onOneWayOperationCompletedDelegate, userState);
         }
     }
 }

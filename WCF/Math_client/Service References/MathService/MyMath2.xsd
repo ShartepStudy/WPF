@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/math_server" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/math_server" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="MathResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Div" type="xs:double" />
+      <xs:element minOccurs="0" name="Mult" type="xs:double" />
+      <xs:element minOccurs="0" name="Sub" type="xs:double" />
+      <xs:element minOccurs="0" name="Sum" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MathResult" nillable="true" type="tns:MathResult" />
+</xs:schema>

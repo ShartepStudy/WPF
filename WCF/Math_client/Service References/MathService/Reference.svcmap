@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e9f42a11-7b9e-447e-b6ad-9261dbf31e88" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
-    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
-    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
     <ExcludedTypes />
     <ImportXmlTypes>false</ImportXmlTypes>
@@ -27,6 +26,7 @@
     <MetadataFile FileName="MyMath.xsd" MetadataType="Schema" ID="cf937c3d-53f7-4885-80d0-6a883edb0895" SourceId="1" SourceUrl="http://localhost:8082/MyMath?xsd=xsd0" />
     <MetadataFile FileName="MyMath.disco" MetadataType="Disco" ID="4b4fc966-ab87-481c-8f9c-fd16d9f92564" SourceId="1" SourceUrl="http://localhost:8082/MyMath?disco" />
     <MetadataFile FileName="MyMath1.xsd" MetadataType="Schema" ID="37c5a020-89f9-4eac-927e-7fd3b4ed96c3" SourceId="1" SourceUrl="http://localhost:8082/MyMath?xsd=xsd1" />
+    <MetadataFile FileName="MyMath2.xsd" MetadataType="Schema" ID="7bee5122-5faa-4d68-ab0d-5ac489b3b2b7" SourceId="1" SourceUrl="http://localhost:8082/MyMath?xsd=xsd2" />
     <MetadataFile FileName="MyMath.wsdl" MetadataType="Wsdl" ID="e6b31590-a3a2-4388-8e26-b7f74b3ae991" SourceId="1" SourceUrl="http://localhost:8082/MyMath?wsdl" />
   </Metadata>
   <Extensions>

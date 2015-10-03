@@ -53,6 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Service References\MathService\Math_client.MathService.MathResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\MathService\MyMath.wsdl" />
     <None Include="Service References\MathService\MyMath.xsd">
       <SubType>Designer</SubType>
@@ -77,6 +80,9 @@
     <None Include="Service References\MathService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\MathService\MyMath2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\MathService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

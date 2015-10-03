@@ -4,30 +4,100 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8082/MyMath?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8082/MyMath?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8082/MyMath?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/math_server" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IMyMath_Add_InputMessage">
-    <wsdl:part name="parameters" element="tns:Add" />
+  <wsdl:message name="IMyMath_AddInt_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddInt" />
   </wsdl:message>
-  <wsdl:message name="IMyMath_Add_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddResponse" />
+  <wsdl:message name="IMyMath_AddInt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddIntResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyMath_AddDouble_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDouble" />
+  </wsdl:message>
+  <wsdl:message name="IMyMath_AddDouble_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDoubleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyMath_Total_InputMessage">
+    <wsdl:part name="parameters" element="tns:Total" />
+  </wsdl:message>
+  <wsdl:message name="IMyMath_Total_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyMath_TwoWayOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:TwoWayOperation" />
+  </wsdl:message>
+  <wsdl:message name="IMyMath_TwoWayOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TwoWayOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyMath_OneWayOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:OneWayOperation" />
   </wsdl:message>
   <wsdl:portType name="IMyMath">
-    <wsdl:operation name="Add">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMyMath/Add" message="tns:IMyMath_Add_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMyMath/AddResponse" message="tns:IMyMath_Add_OutputMessage" />
+    <wsdl:operation name="AddInt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyMath/AddInt" message="tns:IMyMath_AddInt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyMath/AddIntResponse" message="tns:IMyMath_AddInt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDouble">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyMath/AddDouble" message="tns:IMyMath_AddDouble_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyMath/AddDoubleResponse" message="tns:IMyMath_AddDouble_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Total">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyMath/Total" message="tns:IMyMath_Total_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyMath/TotalResponse" message="tns:IMyMath_Total_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TwoWayOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyMath/TwoWayOperation" message="tns:IMyMath_TwoWayOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyMath/TwoWayOperationResponse" message="tns:IMyMath_TwoWayOperation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OneWayOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyMath/OneWayOperation" message="tns:IMyMath_OneWayOperation_InputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IMyMath" type="tns:IMyMath">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="Add">
-      <soap:operation soapAction="http://tempuri.org/IMyMath/Add" style="document" />
+    <wsdl:operation name="AddInt">
+      <soap:operation soapAction="http://tempuri.org/IMyMath/AddInt" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDouble">
+      <soap:operation soapAction="http://tempuri.org/IMyMath/AddDouble" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Total">
+      <soap:operation soapAction="http://tempuri.org/IMyMath/Total" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TwoWayOperation">
+      <soap:operation soapAction="http://tempuri.org/IMyMath/TwoWayOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneWayOperation">
+      <soap:operation soapAction="http://tempuri.org/IMyMath/OneWayOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="MyMath">
