@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<br/><br/>
+<h2>Index</h2>
+
+@using(Html.BeginForm("Index", "Home"))
+{ 
+    <input type="checkbox"
+           name="checkbox2"
+           class="cbclass" />
+
+    @Html.CheckBox("checkbox1",
+    new
+    {
+        @class = "cbclass",
+        @id = "mycheckbox"
+    })
+    <input type="submit"/>
+}
