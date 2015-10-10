@@ -1,0 +1,12 @@
+C:\Users\Анастасия\Desktop\DataBetweenPages\DataBetweenPages\bin\DataBetweenPages.dll.config
+C:\Users\Анастасия\Desktop\DataBetweenPages\DataBetweenPages\bin\DataBetweenPages.dll
+C:\Users\Анастасия\Desktop\DataBetweenPages\DataBetweenPages\bin\DataBetweenPages.pdb
+C:\Users\Анастасия\Desktop\DataBetweenPages\DataBetweenPages\obj\Debug\DataBetweenPages.csprojResolveAssemblyReference.cache
+C:\Users\Анастасия\Desktop\DataBetweenPages\DataBetweenPages\obj\Debug\DataBetweenPages.dll
+C:\Users\Анастасия\Desktop\DataBetweenPages\DataBetweenPages\obj\Debug\DataBetweenPages.pdb
+\\fs\Преподаватели\Иванченко Анастасия\Public\ASP.NET\Win Forms\Примеры\DataBetweenPages\DataBetweenPages\bin\DataBetweenPages.dll.config
+\\fs\Преподаватели\Иванченко Анастасия\Public\ASP.NET\Win Forms\Примеры\DataBetweenPages\DataBetweenPages\bin\DataBetweenPages.dll
+\\fs\Преподаватели\Иванченко Анастасия\Public\ASP.NET\Win Forms\Примеры\DataBetweenPages\DataBetweenPages\bin\DataBetweenPages.pdb
+\\fs\Преподаватели\Иванченко Анастасия\Public\ASP.NET\Win Forms\Примеры\DataBetweenPages\DataBetweenPages\obj\Debug\DataBetweenPages.csprojResolveAssemblyReference.cache
+\\fs\Преподаватели\Иванченко Анастасия\Public\ASP.NET\Win Forms\Примеры\DataBetweenPages\DataBetweenPages\obj\Debug\DataBetweenPages.dll
+\\fs\Преподаватели\Иванченко Анастасия\Public\ASP.NET\Win Forms\Примеры\DataBetweenPages\DataBetweenPages\obj\Debug\DataBetweenPages.pdb
