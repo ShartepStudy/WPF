@@ -1,0 +1,44 @@
+﻿@model MvcApplication2.Models.Book
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Info2</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Book</legend>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Name)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Author)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Author)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Price)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Price)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+        @Html.ActionLink("BUY", "Buy", new { id=@Model.Id })
+    </p>
+</body>
+</html>

@@ -30,6 +30,29 @@ namespace MvcApplication2.Controllers
             return View(book);
         }
 
+        public ActionResult Info2(int id)
+        {
+            Book book = _books.Find(x => x.Id == id);
+            return View(book);
+        }
+
+        public ActionResult Buy(int id)
+        {
+            Purchase p = new Purchase();
+            p.BookId = id;
+            return View(p);
+        }
+
+        [HttpPost]
+        public ActionResult Buy(Purchase p)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(p);
+            }
+            return new EmptyResult();
+        }
+
         private DateTime getToday()
         {
             return DateTime.Now;

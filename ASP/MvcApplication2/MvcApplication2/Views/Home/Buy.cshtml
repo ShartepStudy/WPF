@@ -1,0 +1,67 @@
+﻿@model MvcApplication2.Models.Purchase
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Buy</title>
+    <script src="~/Scripts/jquery-1.8.3.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+</head>
+<body>
+    @using (Html.BeginForm("Buy", "Home", FormMethod.Post)) {
+        Html.ValidationSummary(true);
+        Html.EnableClientValidation(true);
+    
+        <fieldset>
+            <legend>Purchase</legend>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Person)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Person)
+                @Html.ValidationMessageFor(model => model.Person)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Address)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Address)
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.BookId)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.BookId)
+                @Html.ValidationMessageFor(model => model.BookId)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Date)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Date)
+                @Html.ValidationMessageFor(model => model.Date)
+            </div>
+    
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>
