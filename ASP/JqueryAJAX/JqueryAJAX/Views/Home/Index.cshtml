@@ -1,0 +1,76 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-1.8.0.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script>
+        $(function () {
+            console.log("hello world");
+            var res = $("p, a");
+            console.log(res);
+            var res1 = $("#ul1 :even");
+            console.log(res1);
+            var res2 = $("#select1 :selected");
+            console.log(res2);
+
+            //events
+            $("#p1").click(function (e) {
+                console.log(e);
+                console.log("press p1");
+                $("#p2").addClass("red");
+                $("#ul1").append("<li>red</li>");
+            });
+
+            //ajax Helpers
+            
+        });
+    </script>
+    <style>
+        .red { color:red; }
+    </style>
+</head>
+<body>
+    <div> 
+        Hello
+        <p id="p1">p1</p>
+        <p id="p2">p2</p>
+        <p>p3</p>
+        <p>p4</p>
+        <p>p5</p>
+        <ul id="ul1">
+            <li>1</li>
+            <li>2</li>
+            <li></li>
+        </ul>
+        <select id="select1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+    </div>
+    <div>
+        @Ajax.ActionLink("Action Link", "ActionLink", new AjaxOptions() { UpdateTargetId = "res1" })
+        <div id="res1"></div>
+        @using(Ajax.BeginForm("BeginForm", 
+            new AjaxOptions() {
+                HttpMethod = "post",
+                UpdateTargetId = "res2"
+            }))
+        {
+            <input type="text" name="name" />
+            <input type="submit" />
+        }
+        <div id="res2"></div>
+
+        @Html.Partial("_Partial1", 3)
+    </div>
+</body>
+</html>
